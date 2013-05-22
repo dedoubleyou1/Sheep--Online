@@ -1,0 +1,36 @@
+<head>
+  <title>sheepOnline</title>
+</head>
+
+<body>
+	{{loginButtons}}
+  {{> hello}}
+  {{> gameBoard}}
+</body>
+
+<template name='hello'>
+  <h1>Sheep! Online</h1>
+  <input type='button' value='Clear' />
+</template>
+
+<template name='gameBoard'>
+	<div class='gameGrid'>
+		<div class='holder1'>
+		    {{#each gameBoxes}}
+		      {{> gameBox}}
+		    {{/each}}
+		</div><div class='holder2'>
+		    {{#each gameFences}}
+		      {{> gameFence}}
+		    {{/each}}
+		</div>
+    </div>
+</template>
+
+<template name='gameBox'>
+	<div class='box'>{{content}}</div>
+</template>
+
+<template name='gameFence'>
+	<div {{{orient}}}></div>
+</template>
